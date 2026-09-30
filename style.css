@@ -1,0 +1,1166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+
+*::selection {
+  background-color: #fff;
+  color: #b3e824;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body::-webkit-scrollbar {
+  width: 0.6vw;
+  height: 100%;
+  background-color: #000;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #b3e824;
+  width: 0.7vw;
+  border-radius: 1vw;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.564);
+}
+
+#page1 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+#page1 h1 {
+  font-size: 8vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 1vw;
+  position: relative;
+  z-index: 10;
+}
+
+#page1 h1::before {
+  content: "Eat. Drink. Play.";
+  text-transform: uppercase;
+  color: black;
+  position: absolute;
+  z-index: -1;
+  top: -4px;
+  left: -4px;
+  -webkit-text-stroke: 1px #b3e824;
+}
+
+#page1 h2 {
+  font-size: 2vw;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 1vw;
+}
+
+#page1 p {
+  font-size: 1.3vw;
+  line-height: 1.4;
+  font-weight: 400;
+  text-align: center;
+  width: 46%;
+}
+
+nav {
+  width: 100%;
+  height: 20vh;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0vw 10vw;
+  gap: 5vw;
+  position: fixed;
+  z-index: 99;
+}
+
+nav img {
+  height: 5vw;
+}
+
+nav h4 {
+  font-size: 1.3vw;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+}
+
+.cursor {
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+  background-color: #b3e824;
+  position: fixed;
+  z-index: 99;
+}
+
+.cursor-blur {
+  width: 18vw;
+  height: 18vw;
+  border-radius: 50%;
+  filter: blur(5vw);
+  background-color: #b4e824a5;
+  position: fixed;
+  z-index: 9;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: fixed;
+  z-index: -1;
+}
+
+.circle-arrow {
+  width: 13vw;
+  height: 13vw;
+  border-radius: 50%;
+  border: 2px solid #b3e824;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: -2%;
+  bottom: 0%;
+  transition: all ease 0.5s;
+}
+
+.circle-arrow i {
+  font-size: 3.2vw;
+}
+
+.circle-arrow:hover {
+  scale: 0.4;
+  background-color: #b3e824;
+  transition: all ease 0.5s;
+}
+
+/* Page 2 */
+#page2 {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+}
+
+#scroller {
+  padding-top: 8vw;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 10;
+}
+
+#scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.scroller-in {
+  display: inline-block;
+  animation-name: scroll;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.scroller-in h4 {
+  font-size: 6.5vw;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: "Montserrat Alternates", sans-serif;
+  margin-right: 4vw;
+  color: transparent;
+  -webkit-text-stroke: 2px #b3e824;
+  transition: all ease 0.7s;
+}
+
+.scroller-in h4:hover {
+  -webkit-text-stroke: 2px #b3e824;
+  color: #b3e824;
+  transition: all ease 0.7s;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* About Us Section */
+#about-us {
+  height: 40vh;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 10;
+}
+
+#about-us img {
+  width: 220px;
+  height: 220px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.about-us-inner {
+  text-align: center;
+  width: 50%;
+}
+
+.about-us-inner h2 {
+  font-size: 2.8vw;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 15px;
+}
+
+.about-us-inner p {
+  font-size: 1.3vw;
+  line-height: 1.3;
+  padding: 15px 0px;
+}
+
+/* Cards Section */
+#card-container {
+  height: 80vh;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 10;
+}
+.card {
+  width: 23%;
+  height: 90%;
+  /* background-color: blue; */
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  transition: all ease 0.8s;
+}
+#card1 {
+  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card2 {
+  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card3 {
+  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #b3e824;
+  padding: 75px;
+  padding-top: 150px;
+  opacity: 0;
+  transition: all ease 0.8s;
+}
+.overlay h2 {
+  font-size: 2vw;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 15px;
+}
+.overlay p {
+  font-size: 1.1vw;
+  color: #000;
+}
+.card:hover .overlay {
+  opacity: 1;
+  transition: all ease 0.8s;
+}
+
+/* Green Section */
+#green-section {
+  height: 30vh;
+  background: linear-gradient(to left bottom, #4bae2d, #b3e824);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#green-section img {
+  height: 100%;
+  width: 14%;
+  object-fit: cover;
+}
+#green-section h4 {
+  font-size: 1.8vw;
+  font-weight: 800;
+  width: 50%;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000;
+}
+
+/* Page 3 */
+#page3 {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#page3 img {
+  position: absolute;
+  width: 6%;
+}
+#page3 h4 {
+  font-size: 2.3vw;
+  font-weight: 700;
+  width: 60%;
+  text-align: center;
+}
+#page3 #quote1 {
+  top: 13%;
+  left: 13%;
+}
+#page3 #quote2 {
+  bottom: 13%;
+  right: 13%;
+}
+
+/* Page 4 */
+#page4 {
+  width: 100%;
+  height: 35vh;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  position: relative;
+}
+#page4 > h1 {
+  position: absolute;
+  font-size: 80px;
+  text-transform: uppercase;
+  color: #000;
+  -webkit-text-stroke: 2px #fff;
+  font-family: "Montserrat Alternates", sans-serif;
+  top: 1%;
+  font-weight: 800;
+}
+.elem {
+  width: 25%;
+  height: 60%;
+  /* background-color: blue; */
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  transition: all ease 0.6s;
+}
+.elem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  scale: 1.1;
+  transition: all ease 0.6s;
+}
+.elem h2 {
+  width: 100%;
+  height: 100%;
+  background-color: #b3e824;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 750;
+  font-size: 2vw;
+  position: absolute;
+  z-index: 10;
+  transition: all ease 0.6s;
+}
+.elem:hover h2 {
+  background-color: transparent;
+  color: #fff;
+  transition: all ease 0.6s;
+}
+.elem:hover img {
+  scale: 1;
+  transition: all ease 0.6s;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  height: 50vh;
+  background: linear-gradient(to left bottom, #4bae2d, #b3e824);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 170px;
+  padding: 0px 120px;
+  position: relative;
+}
+footer > img {
+  /* width: 20%; */
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  left: 0;
+}
+#f1 img {
+  height: 120px;
+}
+#f1,
+#f2,
+#f3,
+#f4 {
+  position: relative;
+  z-index: 2;
+}
+#f2 > h4 {
+  font-size: 2vw;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #000;
+}
+#f3 > h4 {
+  font-size: 2vw;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #000;
+}
+#f4 > h4 {
+  font-size: 1.2vw;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #000;
+  margin-top: 1.2vw;
+}
+#f4 > h4 > strong {
+  font-weight: 800;
+  color: #000;
+}
+
+/* Responsiveness */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+/* =========================================
+   TABLET VIEW
+========================================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Navbar */
+  nav {
+    height: 13vh;
+    padding: 0 4vw;
+    justify-content: space-between;
+    gap: 2vw;
+  }
+
+  nav img {
+    height: 5.5vw;
+  }
+
+  nav h4 {
+    font-size: 1.5vw;
+    white-space: nowrap;
+  }
+
+  /* Page 1 */
+  #page1 {
+    min-height: 100vh;
+    height: auto;
+    padding: 15vh 5vw 10vh;
+  }
+
+  #page1 h1 {
+    font-size: 10vw;
+    text-align: center;
+  }
+
+  #page1 h1::before {
+    top: -3px;
+    left: -3px;
+  }
+
+  #page1 h2 {
+    font-size: 3vw;
+    text-align: center;
+    margin-bottom: 2vw;
+  }
+
+  #page1 p {
+    width: 75%;
+    font-size: 1.8vw;
+    line-height: 1.6;
+  }
+
+  .circle-arrow {
+    width: 11vw;
+    height: 11vw;
+    left: 3%;
+    bottom: 3%;
+  }
+
+  .circle-arrow i {
+    font-size: 4vw;
+  }
+
+  /* Page 2 */
+  #scroller {
+    padding-top: 10vw;
+    margin-bottom: 5vw;
+  }
+
+  .scroller-in h4 {
+    font-size: 8vw;
+    -webkit-text-stroke: 1.5px #b3e824;
+  }
+
+  /* About Us */
+  #about-us {
+    height: auto;
+    min-height: 40vh;
+    padding: 4vw 5vw;
+    gap: 3vw;
+    margin: 5vw 0;
+  }
+
+  #about-us img {
+    width: 21vw;
+    height: 25vw;
+    border-radius: 12px;
+  }
+
+  .about-us-inner {
+    width: 53%;
+  }
+
+  .about-us-inner h2 {
+    font-size: 4vw;
+    margin-bottom: 1vw;
+  }
+
+  .about-us-inner p {
+    font-size: 1.65vw;
+    line-height: 1.6;
+    padding: 1vw 0;
+  }
+
+  /* Cards */
+  #card-container {
+    height: auto;
+    min-height: 55vh;
+    padding: 4vw;
+    gap: 3vw;
+    margin: 4vw 0;
+  }
+
+  .card {
+    width: 32%;
+    height: 48vh;
+    border-radius: 12px;
+  }
+
+  .overlay {
+    padding: 3vw;
+    padding-top: 8vw;
+  }
+
+  .overlay h2 {
+    font-size: 2.6vw;
+    margin-bottom: 2vw;
+  }
+
+  .overlay p {
+    font-size: 1.6vw;
+    line-height: 1.5;
+  }
+
+  /* Green section */
+  #green-section {
+    height: 23vh;
+  }
+
+  #green-section img {
+    width: 13%;
+  }
+
+  #green-section h4 {
+    width: 65%;
+    font-size: 2.5vw;
+    line-height: 1.5;
+  }
+
+  /* Page 3 */
+  #page3 {
+    height: 75vh;
+    padding: 5vw;
+  }
+
+  #page3 h4 {
+    width: 75%;
+    font-size: 3vw;
+    line-height: 1.6;
+  }
+
+  #page3 img {
+    width: 7%;
+  }
+
+  #page3 #quote1 {
+    top: 12%;
+    left: 7%;
+  }
+
+  #page3 #quote2 {
+    bottom: 12%;
+    right: 7%;
+  }
+
+  /* Page 4 */
+  #page4 {
+    height: auto;
+    min-height: 42vh;
+    padding: 12vw 4vw 5vw;
+    gap: 3vw;
+  }
+
+  #page4 > h1 {
+    font-size: 5.5vw;
+    top: 2%;
+    text-align: center;
+    width: 100%;
+  }
+
+  .elem {
+    width: 32%;
+    height: 25vw;
+    border-radius: 12px;
+  }
+
+  .elem h2 {
+    font-size: 2.5vw;
+    padding: 1vw;
+    text-align: center;
+  }
+
+  /* Footer */
+  footer {
+    height: auto;
+    min-height: 35vh;
+    padding: 5vw;
+    gap: 5vw;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  footer > img {
+    width: 25%;
+    object-fit: cover;
+  }
+
+  #f1 img {
+    height: 9vw;
+  }
+
+  #f2 > h4,
+  #f3 > h4 {
+    font-size: 2.2vw;
+    line-height: 1.7;
+  }
+
+  #f4 > h4 {
+    font-size: 1.5vw;
+    line-height: 1.8;
+    margin-top: 0;
+  }
+}
+
+/* =========================================
+   MOBILE VIEW
+========================================= */
+@media (max-width: 767px) {
+  /* Global */
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  main {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* Hide custom cursor on touch devices */
+  .cursor,
+  .cursor-blur {
+    display: none;
+  }
+
+  /* Navbar */
+  nav {
+    height: 75px;
+    padding: 0 5vw;
+    justify-content: space-between;
+    gap: 0;
+    background-color: #000;
+  }
+
+  nav img {
+    height: 42px;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  nav h4 {
+    display: none;
+  }
+
+  /* Page 1 */
+  #page1 {
+    height: 100svh;
+    min-height: 600px;
+    padding: 100px 6vw 100px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #page1 h1 {
+    font-size: 13vw;
+    line-height: 1.1;
+    margin-bottom: 5vw;
+    text-align: center;
+  }
+
+  #page1 h1::before {
+    top: -2px;
+    left: -2px;
+    -webkit-text-stroke: 0.7px #b3e824;
+  }
+
+  #page1 h2 {
+    font-size: 5vw;
+    line-height: 1.4;
+    margin-bottom: 4vw;
+    padding: 0 2vw;
+  }
+
+  #page1 p {
+    width: 90%;
+    max-width: 450px;
+    font-size: 3.6vw;
+    line-height: 1.7;
+  }
+
+  .circle-arrow {
+    width: 19vw;
+    height: 19vw;
+    max-width: 85px;
+    max-height: 85px;
+    left: 5%;
+    bottom: 5%;
+    border-width: 1.5px;
+  }
+
+  .circle-arrow i {
+    font-size: 7vw;
+  }
+
+  .circle-arrow:hover {
+    scale: 0.85;
+  }
+
+  /* Page 2 */
+  #page2 {
+    min-height: auto;
+    width: 100%;
+  }
+
+  /* Infinite scroller */
+  #scroller {
+    padding-top: 16vw;
+    margin-bottom: 12vw;
+    overflow: hidden;
+  }
+
+  .scroller-in {
+    animation-duration: 22s;
+  }
+
+  .scroller-in h4 {
+    font-size: 12vw;
+    margin-right: 5vw;
+    -webkit-text-stroke: 1px #b3e824;
+  }
+
+  /* About Us */
+  #about-us {
+    height: auto;
+    padding: 0 7vw;
+    margin: 8vw 0 14vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6vw;
+  }
+
+  #about-us img {
+    width: 75%;
+    max-width: 340px;
+    height: 48vw;
+    max-height: 230px;
+    border-radius: 14px;
+    object-fit: cover;
+  }
+
+  .about-us-inner {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-us-inner h2 {
+    font-size: 8vw;
+    margin-bottom: 3vw;
+  }
+
+  .about-us-inner p {
+    font-size: 3.6vw;
+    line-height: 1.7;
+    padding: 2vw 0;
+  }
+
+  /* Cards */
+  #card-container {
+    height: auto;
+    padding: 5vw 7vw;
+    margin: 8vw 0 12vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7vw;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 450px;
+    height: 100vw;
+    max-height: 390px;
+    min-height: 260px;
+    border-radius: 14px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  /* Show card overlays on mobile */
+  .overlay {
+    opacity: 1;
+    height: 100%;
+    padding: 7vw;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(
+      to top,
+      rgba(179, 232, 36, 0.98),
+      rgba(179, 232, 36, 0.65) 38%,
+      transparent 75%
+    );
+  }
+
+  .overlay h2 {
+    font-size: 6vw;
+    line-height: 1.2;
+    margin-bottom: 3vw;
+  }
+
+  .overlay p {
+    font-size: 3.5vw;
+    line-height: 1.5;
+  }
+
+  /* Green section */
+  #green-section {
+    height: auto;
+    min-height: 190px;
+    padding: 8vw 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #green-section img {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 22%;
+    opacity: 0.5;
+  }
+
+  #green-section img:first-child {
+    left: 0;
+  }
+
+  #green-section img:last-child {
+    right: 0;
+  }
+
+  #green-section h4 {
+    width: 75%;
+    max-width: 400px;
+    font-size: 5vw;
+    line-height: 1.5;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Page 3 */
+  #page3 {
+    height: auto;
+    min-height: 75svh;
+    padding: 25vw 7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #page3 h4 {
+    width: 100%;
+    max-width: 550px;
+    font-size: 5vw;
+    line-height: 1.7;
+    font-weight: 600;
+  }
+
+  #page3 img {
+    width: 11%;
+  }
+
+  #page3 #quote1 {
+    top: 9%;
+    left: 7%;
+  }
+
+  #page3 #quote2 {
+    bottom: 9%;
+    right: 7%;
+  }
+
+  /* Page 4 */
+  #page4 {
+    height: auto;
+    padding: 25vw 7vw 12vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6vw;
+  }
+
+  #page4 > h1 {
+    position: relative;
+    top: auto;
+    width: 100%;
+    font-size: 8vw;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 3vw;
+    -webkit-text-stroke: 1px #fff;
+  }
+
+  .elem {
+    width: 100%;
+    max-width: 450px;
+    height: 55vw;
+    max-height: 280px;
+    min-height: 190px;
+    border-radius: 14px;
+  }
+
+  .elem img {
+    scale: 1;
+  }
+
+  .elem h2 {
+    font-size: 6vw;
+    text-align: center;
+    padding: 3vw;
+  }
+
+  /* Keep title visible on touch screens */
+  .elem:hover h2 {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+  }
+
+  /* Footer */
+  footer {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 12vw 8vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: start;
+    gap: 9vw 5vw;
+  }
+
+  footer > img {
+    width: 35%;
+    height: 100%;
+    object-fit: cover;
+    left: 0;
+    top: 0;
+    opacity: 0.7;
+  }
+
+  #f1 {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  #f1 img {
+    height: 75px;
+    width: auto;
+  }
+
+  #f2,
+  #f3 {
+    width: 100%;
+  }
+
+  #f2 > h4,
+  #f3 > h4 {
+    font-size: 4vw;
+    line-height: 1.8;
+    font-weight: 800;
+  }
+
+  #f4 {
+    grid-column: 1 / -1;
+    width: 100%;
+    text-align: center;
+  }
+
+  #f4 > h4 {
+    font-size: 3.3vw;
+    line-height: 1.9;
+    font-weight: 500;
+    margin-top: 0;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+@media (max-width: 380px) {
+  nav {
+    height: 65px;
+  }
+
+  nav img {
+    height: 36px;
+  }
+
+  #page1 h1 {
+    font-size: 12.5vw;
+  }
+
+  #page1 h2 {
+    font-size: 5.2vw;
+  }
+
+  #page1 p {
+    font-size: 3.8vw;
+  }
+
+  .about-us-inner p {
+    font-size: 3.8vw;
+  }
+
+  .card {
+    min-height: 240px;
+  }
+
+  .overlay h2 {
+    font-size: 6.5vw;
+  }
+
+  #page3 h4 {
+    font-size: 5.3vw;
+  }
+
+  #page4 > h1 {
+    font-size: 8.5vw;
+  }
+
+  #f2 > h4,
+  #f3 > h4 {
+    font-size: 4.2vw;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
